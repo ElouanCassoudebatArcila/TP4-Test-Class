@@ -67,9 +67,9 @@ cercle.afficher_infos()
 class Hero:
     def __init__(self, pv, force_attaque, force_defense, nom_hero):
         self.dommage = None
-        self.pv = pv
-        self.force_attaque = force_attaque
-        self.force_defense = force_defense
+        self.pv = randint(1, 10) + randint(1, 10)
+        self.force_attaque = randint(1, 6)
+        self.force_defense = randint(1, 6)
         self.nom_hero = nom_hero
 
     def faire_une_attaque(self):
@@ -77,7 +77,7 @@ class Hero:
 
     def recevoir_dommage(self, dommage):
         self.dommage = dommage
-        return self.pv - self.dommage + self.force_defense
+        self.pv -= self.dommage - self.force_defense
 
     def est_vivant(self):
         return self.pv > 0
@@ -104,9 +104,9 @@ class Caracteristique:
 class Hero2:
     def __init__(self, nom_hero):
         self.dommage = None
-        self.pv = de()
-        self.force_attaque = de()
-        self.force_defense = de()
+        self.pv = randint(1, 10) +randint(1, 10)
+        self.force_attaque = randint(1, 6)
+        self.force_defense = randint(1, 6)
         self.nom_hero = nom_hero
         self.caracteristique = Caracteristique()
 
@@ -115,7 +115,7 @@ class Hero2:
 
     def recevoir_dommage(self, dommage):
         self.dommage = dommage
-        return self.pv - self.dommage + self.force_defense
+        self.pv -= self.dommage + self.force_defense
 
     def est_vivant(self):
         return self.pv > 0
