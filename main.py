@@ -102,7 +102,7 @@ class Caracteristique:
 
 
 class Hero2:
-    def __init__(self,nom_hero):
+    def __init__(self, nom_hero):
         self.dommage = None
         self.pv = de()
         self.force_attaque = de()
